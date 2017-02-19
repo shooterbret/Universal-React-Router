@@ -1,4 +1,4 @@
-//As stated in Redux server side rendering
+//As stated in Redux server side rendering. Stringify's The Redux State and Parses the prerendered Component
 
  function renderFullPage(html, preloadedState) {
     return `
