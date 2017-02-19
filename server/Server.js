@@ -9,8 +9,7 @@ import Routes from '../universal/ReactRouter';
 import { Provider } from 'react-redux';
 let favicon = require('serve-favicon');
 
-
-app.use(favicon(__dirname + '/public/favicon.ico')); //Handles FavIcon
+app.use(favicon(__dirname + './../public/favicon.ico')); //Handles FavIcon
 
 app.get('*', function (req, res) {
     match({ routes: Routes, location: req.url }, (error, redirectLocation, renderProps) => {
@@ -36,19 +35,11 @@ app.get('*', function (req, res) {
 
 
     //Makes request here. We will set this up with mock data. You can also use plain mongo here
-          console.log("ERROR FOUND: ");
-         console.log(error);
     console.log("-------------------");
     console.log("Redirect Location" + redirectLocation);
     console.log("Request Location:" + req.url);
+   // console.log("Render Props: " + renderProps);
     console.log("-------------------");
-    console.log(renderProps);
-    console.log("BeginTesty");
-    let testy = renderProps;
-    console.log(testy);
-    console.log("BeginTest2");
-    let test2 = Object.assign({}, renderProps);
-    console.log(test2);
     let initialRender = renderToString(
         /*
          https://github.com/koriym/Koriym.Baracoa Server side uses store with context
