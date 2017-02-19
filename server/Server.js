@@ -7,7 +7,11 @@ import setStore from "../universal/Store";
 import { match, RouterContext} from 'react-router';
 import Routes from '../universal/ReactRouter';
 import { Provider } from 'react-redux';
-//require('redux');
+let favicon = require('serve-favicon');
+
+
+app.use(favicon(__dirname + '/public/favicon.ico')); //Handles FavIcon
+
 app.get('*', function (req, res) {
     match({ routes: Routes, location: req.url }, (error, redirectLocation, renderProps) => {
         //REQUEST DB
