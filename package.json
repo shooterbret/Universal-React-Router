@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --debug -r \"babel-register\" ./server/Server"
+    "start": "cross-env NODE_ENV=development nodemon --debug -r \"babel-register\" ./server/Server",
+    "build": "webpack --devtool source-map --config ./webpack/webpack.config"
   },
   "author": "",
   "license": "ISC",
@@ -17,18 +18,20 @@
     "babel-preset-react": "^6.22.0",
     "babel-register": "^6.23.0",
     "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "node-sass": "^4.5.0",
     "nodemon": "^1.11.0",
     "redux": "^3.6.0",
     "sass-loader": "^5.0.1",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1",
-    "webpack-dev-middleware": "^1.10.0",
+    "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.16.1",
     "webpack-merge": "^2.6.1"
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "cross-env": "^3.1.4",
     "express": "^4.14.1",
     "mongodb": "^2.2.22",
     "mongoose": "^4.8.2",
