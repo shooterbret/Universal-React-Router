@@ -5,7 +5,6 @@ import { Link } from 'react-router';
 import React from 'react';
 
 
-
 const Main = React.createClass({
     render() {
         return (

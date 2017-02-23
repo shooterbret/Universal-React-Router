@@ -8,30 +8,25 @@ import { match, RouterContext} from 'react-router';
 import Routes from '../universal/ReactRouter';
 import { Provider } from 'react-redux';
 let favicon = require('serve-favicon');
-
+import webpack from 'webpack';
+const webpackMiddleware = require("webpack-dev-middleware");
 app.use(favicon(__dirname + './../public/favicon.ico')); //Handles FavIcon
+app.use(express.static('public'));
 
+
+if ( app.get('env') === 'development' ) {
+    app.use(webpackMiddleware(webpack(require('../webpack/webpack.config'))));
+}else if (app.get('env') === 'production'){
+}
+app.get('/text', function (req, res) {
+    res.send("This is server side text.")
+});
 app.get('*', function (req, res) {
     match({ routes: Routes, location: req.url }, (error, redirectLocation, renderProps) => {
         //REQUEST DB
     //     Object.freeze(renderProps);
-    let store = setStore({
-        posts: [
-            {
-                "code": "BAcyDyQwcXX",
-                "caption": "Lunch #hamont",
-                "likes": 56,
-                "id": "1161022966406956503",
-                "display_src": "https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e35/12552326_495932673919321_1443393332_n.jpg"
-            }
-        ], text: {
-            "code": "BAcyDyQwcXX",
-            "caption": "Lunch #hamont",
-            "likes": 56,
-            "id": "1161022966406956503",
-            "display_src": "https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e35/12552326_495932673919321_1443393332_n.jpg"
-        }
-    });
+    let store = setStore({});
+
 
 
     //Makes request here. We will set this up with mock data. You can also use plain mongo here

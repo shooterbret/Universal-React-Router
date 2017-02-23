@@ -1,16 +1,23 @@
-const path = require('path');
-//const merge = require('webpack-merge');
+let path = require('path');
 const PATHS = {
-    app: path.join(__dirname, "../universal/ReactRouter"),
+    app: path.join(__dirname, "../client/Client"),
 
     public: path.join(__dirname,"../public/")
 };
-const common = {
-entry:{
-    app: PATHS.app
-},
-    output:{
-    path: PATHS.public,
-        filename: 'bundle.js'
+module.exports = {
+    entry: PATHS.app,
+    output: {
+        filename: 'client.js',
+        path: PATHS.public
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel-loader'
+            }
+        ]
     }
+
 };
