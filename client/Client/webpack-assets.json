@@ -1,0 +1,13 @@
+{
+  "javascript": {
+    "main": "client.js"
+  },
+  "styles": {
+    "main": "styles.css"
+  },
+  "assets": {
+    "D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/styles/main.scss": {
+      "_style": "[object Object]"
+    }
+  }
+}

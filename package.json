@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development nodemon --debug -r \"babel-register\" ./server/Server",
+    "start": "cross-env NODE_ENV=development node --debug -r \"babel-register\" ./server/Server",
     "build": "webpack --devtool source-map --config ./webpack/webpack.config"
   },
   "author": "",
@@ -42,6 +42,7 @@
     "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "serve-favicon": "^2.3.2"
+    "serve-favicon": "^2.3.2",
+    "webpack-isomorphic-tools": "^2.6.6"
   }
 }

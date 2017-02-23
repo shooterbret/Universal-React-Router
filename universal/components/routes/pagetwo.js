@@ -6,7 +6,7 @@
  */
 import React from 'react';
 import axios from 'axios';
-
+require('../../../styles/main.scss');
 class Main extends React.Component{
     constructor(props){
         super(props);
