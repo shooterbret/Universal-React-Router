@@ -30,6 +30,7 @@ app.get('*', function (req, res) {
     //     Object.freeze(renderProps);
     let store = setStore({});
 
+       //console.log(global.webpack_isomorphic_tools.assets());
 
 
     //Makes request here. We will set this up with mock data. You can also use plain mongo here

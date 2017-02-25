@@ -10,18 +10,33 @@ const PATHS = {
 };
 module.exports = {
     entry: PATHS.app,
+    context: "../",
     output: {
         filename: 'client.js',
         path: PATHS.public
     },
     module: {
-        loaders: [
+        rules: [
+
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/, //React Hot loader needed
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.scss$/,
+                exclude: /(node_modules|bower_components|public)/,
+                use:ExtractTextPlugin.extract({
+                    loader:[
+                           "css-loader",
+                          "sass-loader"
+                ]})
             }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin("styles.css"),
+        webpack_isomorphic_tools_plugin
+    ]
 
 };
