@@ -12,10 +12,13 @@ import webpack from 'webpack';
 const webpackMiddleware = require("webpack-dev-middleware");
 app.use(favicon(__dirname + './../public/favicon.ico')); //Handles FavIcon
 app.use(express.static('public'));
-
+let oneinstance = webpack(require('../webpack/webpack.config'));
 
 if ( app.get('env') === 'development' ) {
-    app.use(webpackMiddleware(webpack(require('../webpack/webpack.config'))));
+    app.use(webpackMiddleware(oneinstance));
+    app.use(require("webpack-hot-middleware")(oneinstance,{
+        reload: true
+    }));
 }else if (app.get('env') === 'production'){
 }
 app.get('/text', function (req, res) {

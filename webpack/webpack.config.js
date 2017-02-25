@@ -1,4 +1,8 @@
 let path = require('path');
+
+//noinspection JSUnresolvedVariable
+//let TARGET = process.env.npm_lifecycle_event;
+
 const PATHS = {
     app: path.join(__dirname, "../client/Client"),
 
@@ -14,7 +18,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /(node_modules|bower_components)/, //React Hot loader needed
                 loader: 'babel-loader'
             }
         ]
