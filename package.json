@@ -43,7 +43,6 @@
     "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "serve-favicon": "^2.3.2",
-    "webpack-isomorphic-tools": "^2.6.6"
+    "serve-favicon": "^2.3.2"
   }
 }
