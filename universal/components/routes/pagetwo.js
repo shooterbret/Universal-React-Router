@@ -7,6 +7,8 @@
 import React from 'react';
 import axios from 'axios';
 //require('../../../styles/main.scss');
+
+    let image =  require("./strange.jpg");
 class Main extends React.Component{
     constructor(props){
         super(props);
@@ -24,6 +26,7 @@ class Main extends React.Component{
             <div>
                 <h1>Hello World, welcome to page 2</h1>
                 ||{this.state.text}||
+                <img src={image}/>
             </div>
         )
     }

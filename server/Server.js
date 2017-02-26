@@ -12,9 +12,13 @@ import webpack from 'webpack';
 const webpackMiddleware = require("webpack-dev-middleware");
 app.use(favicon(__dirname + './../public/favicon.ico')); //Handles FavIcon
 app.use(express.static('public'));
-let oneinstance = webpack(require('../webpack/webpack.config'));
-
+let oneinstance = webpack(require('../webpack/types/webpack.client.config'));
+//https://github.com/webpack/webpack/issues/1599
+//http://stackoverflow.com/questions/29911491/using-webpack-on-server-side-of-nodejs
+//app.close();
+console.log("Server RESTARTED ------------------");
 if ( app.get('env') === 'development' ) {
+    console.log("Test wat?");
     app.use(webpackMiddleware(oneinstance));
     app.use(require("webpack-hot-middleware")(oneinstance,{
         reload: true
@@ -51,7 +55,9 @@ app.get('*', function (req, res) {
         </Provider>
     );
     let finalState = store.getState();
-    res.send(renderFullPage(initialRender, finalState))
+    let debuggo = renderFullPage(initialRender, finalState);
+        //console.log(debuggo);
+    res.send(debuggo);
 
     });
 

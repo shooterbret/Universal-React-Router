@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development node --debug -r \"babel-register\" ./server/Server",
-    "build": "webpack --devtool source-map --config ./webpack/webpack.config"
+    "build": "webpack --devtool source-map --config ./webpack/types/webpack.client.config",
+    "builds": "webpack --devtool source-map --watch --config ./webpack/types/webpack.server.config",
+    "strange": "cross-env NODE_ENV=development nodemon --verbose --watch ./public ./public/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +26,7 @@
     "redux": "^3.6.0",
     "sass-loader": "^5.0.1",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.8",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.16.1",
@@ -32,6 +35,7 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "chokidar": "^1.6.1",
     "cross-env": "^3.1.4",
     "express": "^4.14.1",
     "mongodb": "^2.2.22",
