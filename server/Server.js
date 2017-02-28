@@ -22,7 +22,7 @@ if ( app.get('env') === 'development' ) {
 }
 //app.use(require(__dirname + "\\Routes.js"));
 console.log(__dirname + "./../public/routes.js");
-console.log(require("../public/routes.js"));
+console.log(require("../public/routes.js").default);
 app.use((req, res, next) => {
     require("../public/routes.js")(req, res, next);
 });

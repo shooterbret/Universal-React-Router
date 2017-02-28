@@ -19,25 +19,21 @@ fs.readdirSync('node_modules')
         nodeModules[mod] = 'commonjs ' + mod;
     });
 const lconfig = {
-    entry:[ PATHS.app],
+    entry: PATHS.app,
     target: 'node',
     context: path.resolve(__dirname, '../..'),
     node: {
-        console: false,
-        global: false,
-        process: false,
-        Buffer: false,
         __filename: false,
         __dirname: true,
     },
     output: {
         //filename: 'server.js',
         filename: 'routes.js',
+        library: '',
         libraryTarget: "commonjs2",
         path: PATHS.public
     },
-    externals: nodeModules,
-    watch: true,
+    externals: [nodeModules, {router:true}],
     plugins: [
         new webpack.DefinePlugin({
             $dirname: '__dirname',
