@@ -8668,7 +8668,21 @@ Object.defineProperty(exports, "__esModule", {
 function renderFullPage(html, preloadedState) {
   return '\n    <!doctype html>\n    <html>\n      <head>\n        <title>Redux Universal Example</title>\n      </head>\n      <body>\n        <div id="Root">' + html + '</div>\n        <script>\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\x3c') + '\n          //"It escapes the < characeter to &lt; So it parses OK internally" BTM\n          //Async Loads Bundle?\n        </script>\n        <script async src="client.js"></script>\n      </body>\n    </html>\n    ';
 }
-exports.default = renderFullPage;
+var _default = renderFullPage;
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(renderFullPage, 'renderFullPage', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/template.js');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/template.js');
+}();
+
+;
 
 /***/ }),
 /* 81 */
@@ -8719,7 +8733,21 @@ var Routes = _react2.default.createElement(
     )
 );
 // import react router deps
-exports.default = Routes;
+var _default = Routes;
+exports.default = _default;
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(Routes, 'Routes', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/ReactRouter.js');
+
+    __REACT_HOT_LOADER__.register(_default, 'default', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/ReactRouter.js');
+}();
+
+;
 
 /***/ }),
 /* 82 */
@@ -8761,7 +8789,21 @@ var setStore = function setStore(PreState) {
 /**
  * Created by shooterbret on 2/13/2017.
  */
-exports.default = setStore;
+var _default = setStore;
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(setStore, 'setStore', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/Store.js');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/Store.js');
+}();
+
+;
 
 /***/ }),
 /* 83 */
@@ -8821,7 +8863,25 @@ function mapDispatchToProps(dispatch) {
 //Injects the state and the dispatch into the props. App is the new instance of modified main
 var App = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Root2.default);
 
-exports.default = App;
+var _default = App;
+exports.default = _default;
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(mapStateToProps, 'mapStateToProps', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/App.js');
+
+    __REACT_HOT_LOADER__.register(mapDispatchToProps, 'mapDispatchToProps', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/App.js');
+
+    __REACT_HOT_LOADER__.register(App, 'App', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/App.js');
+
+    __REACT_HOT_LOADER__.register(_default, 'default', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/App.js');
+}();
+
+;
 
 /***/ }),
 /* 86 */
@@ -8863,6 +8923,21 @@ function removeComment(postId, i) {
         postId: postId
     };
 }
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(increment, 'increment', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/actionCreators.js');
+
+    __REACT_HOT_LOADER__.register(addComment, 'addComment', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/actionCreators.js');
+
+    __REACT_HOT_LOADER__.register(removeComment, 'removeComment', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/actionCreators.js');
+}();
+
+;
 
 /***/ }),
 /* 87 */
@@ -8893,7 +8968,21 @@ function posts() {
     return state;
 }
 
-exports.default = posts;
+var _default = posts;
+exports.default = _default;
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(posts, "posts", "D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/reducer/reducers/posts.js");
+
+    __REACT_HOT_LOADER__.register(_default, "default", "D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/reducer/reducers/posts.js");
+}();
+
+;
 
 /***/ }),
 /* 88 */
@@ -8924,7 +9013,21 @@ function posts() {
     return state;
 }
 
-exports.default = posts;
+var _default = posts;
+exports.default = _default;
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(posts, "posts", "D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/reducer/reducers/text.js");
+
+    __REACT_HOT_LOADER__.register(_default, "default", "D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/reducer/reducers/text.js");
+}();
+
+;
 
 /***/ }),
 /* 89 */
@@ -8956,7 +9059,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //library is used for time traveling
 var rootReducer = (0, _redux.combineReducers)({ posts: _posts2.default, text: _text2.default, routing: _reactRouterRedux.routerReducer });
 //Killed , routing: routerReducer for now
-exports.default = rootReducer;
+var _default = rootReducer;
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(rootReducer, 'rootReducer', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/reducer/rootreducer.js');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/reducer/rootreducer.js');
+}();
+
+;
 
 /***/ }),
 /* 90 */
@@ -9000,7 +9117,21 @@ var Main = _react2.default.createClass({
     }
 });
 
-exports.default = Main;
+var _default = Main;
+exports.default = _default;
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(Main, 'Main', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/routes/Root.js');
+
+    __REACT_HOT_LOADER__.register(_default, 'default', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/routes/Root.js');
+}();
+
+;
 
 /***/ }),
 /* 91 */
@@ -9033,7 +9164,7 @@ var Main = _react2.default.createClass({
             _react2.default.createElement(
                 'h1',
                 null,
-                'Hello Worlds'
+                'Hello World'
             ),
             _react2.default.createElement(
                 _reactRouter.Link,
@@ -9044,7 +9175,21 @@ var Main = _react2.default.createClass({
     }
 });
 
-exports.default = Main;
+var _default = Main;
+exports.default = _default;
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(Main, 'Main', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/routes/index.js');
+
+    __REACT_HOT_LOADER__.register(_default, 'default', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/routes/index.js');
+}();
+
+;
 
 /***/ }),
 /* 92 */
@@ -9116,7 +9261,7 @@ var Main = function (_React$Component) {
                 _react2.default.createElement(
                     'h1',
                     null,
-                    'Hello World, welcome to page 2'
+                    'Hello World, welcome to page 2: REEEEE'
                 ),
                 '||',
                 this.state.text,
@@ -9129,7 +9274,21 @@ var Main = function (_React$Component) {
     return Main;
 }(_react2.default.Component);
 
-exports.default = Main;
+var _default = Main;
+exports.default = _default;
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(Main, 'Main', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/routes/pagetwo.js');
+
+    __REACT_HOT_LOADER__.register(_default, 'default', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/universal/components/routes/pagetwo.js');
+}();
+
+;
 
 /***/ }),
 /* 93 */
@@ -20989,6 +21148,17 @@ router.get('*', function (req, res) {
     });
 });
 module.exports = router;
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(router, 'router', 'D:/Users/shooterbret/Desktop/Stuff/Coding/Projects/GitKraken/Universal-React-Router/server/Routes.js');
+}();
+
+;
 
 /***/ })
 /******/ ]);
