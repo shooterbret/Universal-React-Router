@@ -6,8 +6,8 @@ const WebpackShellPlugin = require('webpack-shell-plugin');
 
 let baseConfig = require('../modes/webpack.development.config');
 const PATHS = {
-    app: path.join(__dirname, "./../../server/Server"),
-   // app: path.join(__dirname, "./../../server/Routes"),
+   // app: path.join(__dirname, "./../../server/Server"),
+    app: path.join(__dirname, "./../../server/Routes"),
     public: path.join(__dirname,"./../../public/")
 };
 let nodeModules = {};
@@ -31,8 +31,9 @@ const lconfig = {
         __dirname: true,
     },
     output: {
-        filename: 'server.js',
-       // filename: 'routes.js',
+        //filename: 'server.js',
+        filename: 'routes.js',
+        libraryTarget: "commonjs2",
         path: PATHS.public
     },
     externals: nodeModules,
@@ -41,7 +42,7 @@ const lconfig = {
         new webpack.DefinePlugin({
             $dirname: '__dirname',
         }),
-        new WebpackShellPlugin({onBuildStart:['echo "Compiling Server...."'], onBuildEnd:['npm run strange']})
+        //new WebpackShellPlugin({onBuildStart:['echo "Compiling Server...."'], onBuildEnd:['npm run strange']})
     ]
 };
 

@@ -9,9 +9,9 @@ const Main = React.createClass({
     render() {
         return (
             <div>
-                    <h1>Hello World 3
+                    <h1>Hello World 4
                     </h1>
-                <Link to="/pagetwo">page2</Link>
+                <Link to="/pagetwo">page</Link>
             </div>
         )
     }

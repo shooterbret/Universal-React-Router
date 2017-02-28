@@ -7,7 +7,8 @@
     "start": "cross-env NODE_ENV=development node --debug -r \"babel-register\" ./server/Server",
     "build": "webpack --devtool source-map --config ./webpack/types/webpack.client.config",
     "builds": "webpack --devtool source-map --watch --config ./webpack/types/webpack.server.config",
-    "strange": "cross-env NODE_ENV=development nodemon --verbose --watch ./public ./public/server.js"
+    "strange": "cross-env NODE_ENV=development nodemon --verbose --watch ./public ./public/server.js",
+    "router": "webpack --devtool source-map --config ./webpack/types/webpack.router.config"
   },
   "author": "",
   "license": "ISC",
