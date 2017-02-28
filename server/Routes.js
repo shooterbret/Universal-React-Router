@@ -48,4 +48,4 @@ router.get('*', function (req, res) {
 
 
 });
-module.exports.default = router;
+module.exports = router;

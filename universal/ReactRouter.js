@@ -13,8 +13,8 @@ import {  Route, IndexRoute } from 'react-router';
  const Routes = (
      <div>
             <Route path="/" component={App}>
-                <IndexRoute component={SameApp}></IndexRoute>
-                <Route path="/pagetwo" component={pagetwo}></Route>
+                <IndexRoute component={SameApp}/>
+                <Route path="/pagetwo" component={pagetwo}/>
             </Route>
      </div>
 );

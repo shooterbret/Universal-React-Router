@@ -33,12 +33,13 @@ const lconfig = {
         libraryTarget: "commonjs2",
         path: PATHS.public
     },
-    externals: [nodeModules, {router:true}],
+    watch: true,
+    externals: nodeModules,
     plugins: [
         new webpack.DefinePlugin({
             $dirname: '__dirname',
         }),
-        //new WebpackShellPlugin({onBuildStart:['echo "Compiling Server...."'], onBuildEnd:['npm run strange']})
+        new WebpackShellPlugin({onBuildStart:['echo "Compiling Server...."'], onBuildEnd:['npm start']})
     ]
 };
 

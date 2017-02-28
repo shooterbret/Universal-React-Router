@@ -9033,7 +9033,7 @@ var Main = _react2.default.createClass({
             _react2.default.createElement(
                 'h1',
                 null,
-                'Hello World 4'
+                'Hello Worlds'
             ),
             _react2.default.createElement(
                 _reactRouter.Link,
@@ -20988,7 +20988,7 @@ router.get('*', function (req, res) {
         res.send(debuggo);
     });
 });
-module.exports.default = router;
+module.exports = router;
 
 /***/ })
 /******/ ]);
