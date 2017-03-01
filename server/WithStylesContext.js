@@ -1,9 +1,9 @@
 /**
  * Created by shooterbret on 2/28/2017.
  */
-import { PureComponent, PropTypes, Children } from 'react';
+import { Component, PropTypes, Children } from 'react';
 
- class WithStylesContext extends PureComponent {
+ class WithStylesContext extends Component {
      componentWillUnmount() {
          this.removeCss();
      }

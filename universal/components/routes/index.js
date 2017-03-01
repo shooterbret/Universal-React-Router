@@ -11,7 +11,7 @@ const Main = React.createClass({
     render() {
         return (
             <div>
-                    <h1 className={s.ala}>Hello Worlds
+                    <h1 className={s.redosolo}>Hello Worlds
                     </h1>
                 <Link to="/pagetwo">page</Link>
             </div>

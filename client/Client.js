@@ -31,7 +31,7 @@ const client = (newRoutes) => {
 
 //render(client, document.getElementById('Root'));
 client(Routes);
-console.log(css);
+//console.log(css);
 if (module.hot) { //Always runs when hot is enabled. Simply checks if hot is on the client
     console.log("CLIENT IS HOTTT");
     module.hot.accept('./../universal/ReactRouter', () => { //Accept updates from here and..

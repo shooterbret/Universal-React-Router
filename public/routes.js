@@ -6783,9 +6783,11 @@ module.exports = getActiveElement;
     // Only activated in browser context
     if (false) {
       var removeCss = function() {};
-      module.hot.accept("!!../node_modules/css-loader/index.js?modules&localIdentName=[name]_[local]_[hash:base64:3]!./main.scss", function() {
-        content = require("!!../node_modules/css-loader/index.js?modules&localIdentName=[name]_[local]_[hash:base64:3]!./main.scss");
-
+      module.hot.accept("!!../node_modules/css-loader/index.js?modules&localIdentName=[name]_[local]!./main.scss", function() {
+        content = require("!!../node_modules/css-loader/index.js?modules&localIdentName=[name]_[local]!./main.scss");
+console.log("REEE NORMIE")
+console.log(remainingRequest)
+//console.log(content)
         if (typeof content === 'string') {
           content = [[module.id, content, '']];
         }
@@ -6867,7 +6869,8 @@ function withStyles() {
       (0, _createClass3.default)(WithStyles, [{
         key: 'componentWillMount',
         value: function componentWillMount() {
-          this.removeCss = this.context.insertCss && this.context.insertCss.apply(undefined, styles);
+          this.removeCss = this.context.insertCss.apply(undefined, styles); //PATCH?
+          //this.removeCss = this.context.insertCss && this.context.insertCss.apply(undefined, styles);
         }
       }, {
         key: 'componentWillUnmount',
@@ -10100,7 +10103,7 @@ var Main = _react2.default.createClass({
             null,
             _react2.default.createElement(
                 'h1',
-                { className: s.ala },
+                { className: s.redosolo },
                 'Hello Worlds'
             ),
             _react2.default.createElement(
@@ -10206,7 +10209,7 @@ var Main = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                     'h1',
-                    { className: _main2.default.pepe },
+                    { className: _main2.default.b },
                     'Hello World, welcome to page 2: REEEEE'
                 ),
                 '||',
@@ -10246,44 +10249,33 @@ exports = module.exports = __webpack_require__(142)();
 
 
 // module
-exports.push([module.i, ".main_root_3j6 { padding: 10px; }\r\n.main_title_1BX { color: red; }\r\n.main_pepe_3eb{color:darkmagenta;}\r\n.main_test_3ub{color:lightblue;}\r\n.main_train_nG4{color:darkmagenta;}\r\n.main_tryhard_xQh{color: #dbd518;}\r\n.main_pepedos_2Ry{color:lightblue;}\r\n.main_pepetres_YLj{color:lightcoral}\r\n.main_pepeuno_yWx{color: #dbd518;}\r\n.main_uno_11W{color: green;}\r\n.main_cau_2vg{ color: purple; }\r\n.main_a_18Z{color: green;}\r\n.main_b_1T8{ color: red; }\r\n.main_c_3WG{color:lightblue;}\r\n.main_d_266{color: green;}\r\n.main_e_39a{color:red;}\r\n.main_f_746{color: green;}\r\n.main_g_3El{color: red;}\r\n.main_h_1NU{color: green;}\r\n.main_j_3Ht{color: red;}\r\n.main_k_D9T{color: green;}\r\n.main_h_1NU{color: red;}\r\n.main_pee_DeP{color: orange;}\r\n.main_peep_2OZ{color: orange;}\r\n.main_peek_2gh{color: green;}\r\n.main_peed_3_X{color: orange;}\r\n.main_deed_25F{color: green;}\r\n.main_feed_2Uf{color: red;}\r\n.main_jajaja_LlF{color: green;}\r\n.main_jafar_2-W{color: red;}\r\n.main_is_1FC{color: green;}\r\n.main_my_3wU{color: red;}\r\n.main_name_2em{color: green;}\r\n.main_afar__bS{color: #9fd5ff;}\r\n.main_ala_1O-{color: #3845ff;}", ""]);
+exports.push([module.i, ".main_root { padding: 10px; }\r\n.main_title { color: red; }\r\n.main_pepe{color:darkmagenta;}\r\n.main_a{color: green;}\r\n.main_b{ color: red; }\r\n.main_c{color:lightblue;}\r\n.main_d{ color: red; }\r\n.main_e{color:lightblue;}\r\n.main_g{ color: red; }\r\n.main_h{color:lightblue;}\r\n.main_i{color:darkmagenta;}\r\n.main_j{ color: blue; }\r\n.main_k{color:darkmagenta;}\r\n.main_l{ color: blue; }\r\n.main_m{color:darkmagenta;}\r\n.main_red{ color: red; }\r\n.main_green{color: #228b35;}\r\n.main_purple{color: #8b0e68;}\r\n.main_redo{ color: #ff42b1; }\r\n.main_redos{ color: #1859ff; }\r\n.main_redoso{ color: #ff1518; }\r\n.main_redosol{ color: #3eebff; }\r\n.main_redosolo{ color: #f71eff; }", ""]);
 
 // exports
 exports.locals = {
-	"root": "main_root_3j6",
-	"title": "main_title_1BX",
-	"pepe": "main_pepe_3eb",
-	"test": "main_test_3ub",
-	"train": "main_train_nG4",
-	"tryhard": "main_tryhard_xQh",
-	"pepedos": "main_pepedos_2Ry",
-	"pepetres": "main_pepetres_YLj",
-	"pepeuno": "main_pepeuno_yWx",
-	"uno": "main_uno_11W",
-	"cau": "main_cau_2vg",
-	"a": "main_a_18Z",
-	"b": "main_b_1T8",
-	"c": "main_c_3WG",
-	"d": "main_d_266",
-	"e": "main_e_39a",
-	"f": "main_f_746",
-	"g": "main_g_3El",
-	"h": "main_h_1NU",
-	"j": "main_j_3Ht",
-	"k": "main_k_D9T",
-	"pee": "main_pee_DeP",
-	"peep": "main_peep_2OZ",
-	"peek": "main_peek_2gh",
-	"peed": "main_peed_3_X",
-	"deed": "main_deed_25F",
-	"feed": "main_feed_2Uf",
-	"jajaja": "main_jajaja_LlF",
-	"jafar": "main_jafar_2-W",
-	"is": "main_is_1FC",
-	"my": "main_my_3wU",
-	"name": "main_name_2em",
-	"afar": "main_afar__bS",
-	"ala": "main_ala_1O-"
+	"root": "main_root",
+	"title": "main_title",
+	"pepe": "main_pepe",
+	"a": "main_a",
+	"b": "main_b",
+	"c": "main_c",
+	"d": "main_d",
+	"e": "main_e",
+	"g": "main_g",
+	"h": "main_h",
+	"i": "main_i",
+	"j": "main_j",
+	"k": "main_k",
+	"l": "main_l",
+	"m": "main_m",
+	"red": "main_red",
+	"green": "main_green",
+	"purple": "main_purple",
+	"redo": "main_redo",
+	"redos": "main_redos",
+	"redoso": "main_redoso",
+	"redosol": "main_redosol",
+	"redosolo": "main_redosolo"
 };
 
 /***/ }),
