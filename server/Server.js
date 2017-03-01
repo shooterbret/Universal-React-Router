@@ -16,7 +16,9 @@ console.log("Server RESTARTED ------------------");
 if ( app.get('env') === 'development' ) {
     console.log("Test wat?");
     app.use(webpackMiddleware(oneinstance));
-    app.use(require("webpack-hot-middleware")(oneinstance));
+    app.use(require("webpack-hot-middleware")(oneinstance,{
+        noInfo: true, reload:true
+    }));
 }else if (app.get('env') === 'production'){
 }
 //app.use(require(__dirname + "\\Routes.js"));

@@ -10,7 +10,8 @@ const PATHS = {
 };
 const lconfig = {
     entry: ['react-hot-loader/patch',
-        'webpack-hot-middleware/client?http://localhost:3000',
+        'webpack-hot-middleware/client?reload=true',
+        'webpack/hot/only-dev-server',
         path.resolve(PATHS.app)],
     target: 'web',
     output: {
@@ -26,6 +27,9 @@ const lconfig = {
         // prints more readable module names in the browser console on HMR updates
 
         new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.LoaderOptionsPlugin({
+            debug: true,
+        })
         // do not emit compiled assets that include errors
     ],
 };

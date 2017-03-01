@@ -39,6 +39,9 @@ const lconfig = {
         new webpack.DefinePlugin({
             $dirname: '__dirname',
         }),
+        new webpack.LoaderOptionsPlugin({
+            debug: true,
+        }),
         new WebpackShellPlugin({onBuildStart:['echo "Compiling Server...."'], onBuildEnd:['npm start']})
     ]
 };

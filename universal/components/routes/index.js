@@ -3,13 +3,15 @@
  */
 import React from 'react';
 import { Link } from 'react-router';
-
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+//import s from '../../../styles/main.scss';
+let s = require('../../../styles/main.scss');
 
 const Main = React.createClass({
     render() {
         return (
             <div>
-                    <h1>Hello World
+                    <h1 className={s.ala}>Hello Worlds
                     </h1>
                 <Link to="/pagetwo">page</Link>
             </div>
@@ -17,4 +19,4 @@ const Main = React.createClass({
     }
 });
 
-export default Main;
+export default withStyles(s)(Main);
