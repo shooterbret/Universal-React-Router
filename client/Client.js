@@ -35,7 +35,9 @@ client(Routes);
 if (module.hot) { //Always runs when hot is enabled. Simply checks if hot is on the client
     console.log("CLIENT IS HOTTT");
     module.hot.accept('./../universal/ReactRouter', () => { //Accept updates from here and..
-
+//Very broken. Watch These https://github.com/frenzzy/react-starter-kit/commit/2a4b934d23d83bdfd7fa28b191aad625eea0e249
+        //https://github.com/kriasoft/isomorphic-style-loader/issues/68
+        //
         const newRoutes = require('./../universal/ReactRouter').default;
         client(newRoutes); // Inject the updates (reloads (or reinjects) entire page)
     });

@@ -8,8 +8,7 @@ import Main from './routes/Root';
 function mapStateToProps(state) {
     //Maps
     return {
-        posts: state.posts,
-        comments: state.comments
+        posts: state.posts
     }
 }
 

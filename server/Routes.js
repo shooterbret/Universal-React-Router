@@ -12,14 +12,14 @@ let {renderToString} = require('react-dom/server');
 import WithStylesContext from './WithStylesContext';
 
 router.get('/text', function (req, res) {
-    res.send("This is server side text.")
+    res.send("This is a client side request using axios.")
 });
 router.get('*', function (req, res) {
     const css = []; // CSS for all rendered React components
 
     match({routes: Routes, location: req.url}, (error, redirectLocation, renderProps) => {
         //REQUEST DB
-        let store = setStore({});
+        let store = setStore({posts: "This is the Redux Default Store Talking"});
         //Makes request here. We will set this up with mock data. You can also use plain mongo here
         console.log("-------------------");
         console.log("Redirect Location" + redirectLocation);
@@ -42,7 +42,6 @@ router.get('*', function (req, res) {
         );
         let finalState = store.getState();
         let debuggo = renderFullPage(initialRender, finalState, css);
-        //console.log(debuggo);
         res.send(debuggo);
 
     });

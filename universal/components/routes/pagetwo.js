@@ -23,12 +23,19 @@ class Main extends React.Component{
                 this.setState({text:response.data});
             });
     }
+
     render() {
         return (
             <div>
-                <h1 className={s.b}>Hello World, welcome to page 2</h1>
-                ||{this.state.text}||
+                <h1 className={s.green}>Hello World, welcome to page 2</h1>
                 <img src={image}/>
+                ||{this.state.text}||
+
+                <div id="Redux Store Testing">
+                    Hello <br/>
+                    {this.props.posts} <br/>
+                    <button onClick={() => this.props.AddText('I CLICKED A BUTTON!')}> This Button Will Set text </button>
+                </div>
             </div>
         )
     }
