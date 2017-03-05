@@ -10,10 +10,12 @@ app.use(express.static('public'));
 let oneinstance = webpack(require('../webpack/types/webpack.client.config'));
 let chokidar = require('chokidar');
 let watcher = chokidar.watch("public/routes.js");
-let RouteFile = require("../public/routes.js");
+const routeBuildDirectory = "../PrivateBuild/routes.js";
+let RouteFile = require(routeBuildDirectory); //Do not touch this, It preloads the routes file.
 //https://github.com/webpack/webpack/issues/1599
 //http://stackoverflow.com/questions/29911491/using-webpack-on-server-side-of-nodejs
 //app.close();
+
 console.log("Server RESTARTED ------------------");
 
 function AddRoutes(){
@@ -24,9 +26,9 @@ function AddRoutes(){
 if ( app.get('env') === 'development' ) {
     watcher.on('change', path => {
         console.log(`File ${path} has been changed`);
-        let name = require.resolve('../public/routes.js');
+        let name = require.resolve(routeBuildDirectory);
         delete require.cache[name];
-        setTimeout(() => {RouteFile = require("../public/routes.js");console.log("Server Has Refreshed SSR"); AddRoutes()},50);
+        setTimeout(() => {RouteFile = require(routeBuildDirectory);console.log("Server Has Refreshed SSR"); AddRoutes()},50);
         //Set timeout is needed because the webpack lifecycle must have a chance to run before updating
         //Could also be that webpack needs a little extra time to finish (50ms for this cpu)
     });

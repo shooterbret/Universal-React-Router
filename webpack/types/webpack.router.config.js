@@ -8,7 +8,8 @@ let baseConfig = require('../modes/webpack.development.config');
 const PATHS = {
    // app: path.join(__dirname, "./../../server/Server"),
     app: path.join(__dirname, "./../../server/Routes"),
-    public: path.join(__dirname,"./../../public/")
+    public: path.join(__dirname,"./../../public/"),
+    private: path.join(__dirname,"./../../PrivateBuild/")
 };
 let nodeModules = {};
 fs.readdirSync('node_modules')
@@ -31,7 +32,7 @@ const lconfig = {
         filename: 'routes.js',
         library: '',
         libraryTarget: "commonjs2",
-        path: PATHS.public
+        path: PATHS.private
     },
     watch: true,
     externals: nodeModules,
