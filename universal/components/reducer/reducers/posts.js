@@ -1,4 +1,13 @@
 function posts(state = [], action) {
+    if (state == []){
+        return state;
+    }
+    switch(action.type) {
+        case 'ADD_TEXT' :
+           return  [action.t];
+         default:
+             return state;
+     }
     // switch(action.type) {
     //     case 'INCREMENT_LIKES' :
     //         console.log("Incrementing Likes!!");
@@ -11,7 +20,7 @@ function posts(state = [], action) {
     //     default:
     //         return state;
     // }
-    return state;
+
 }
 
 export default posts;

@@ -6,27 +6,41 @@
  */
 import React from 'react';
 import axios from 'axios';
-require('../../../styles/main.scss');
-class Main extends React.Component{
-    constructor(props){
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+
+const s = require('../../../styles/main.scss');
+const image = require("./strange.jpg");
+
+class Main extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {text: "Loading..."}
     }
-    componentDidMount(){
+
+    componentDidMount() {
         axios.get('/text')
-            .then((response) =>{
-            console.log(response.data);
-                this.setState({text:response.data});
+            .then((response) => {
+                console.log(response.data);
+                this.setState({text: response.data});
             });
     }
+
     render() {
         return (
             <div>
-                <h1>Hello World, welcome to page 2</h1>
+                <h1 className={s.green}>Hello World, welcome to page 2</h1>
+                <img src={image}/>
                 ||{this.state.text}||
+
+                <div id="Redux Store Testing">
+                    Hello <br/>
+                    {this.props.posts} <br/>
+                    <button onClick={() => this.props.AddText('I CLICKED A BUTTON!')}> This Button Will Set text
+                    </button>
+                </div>
             </div>
         )
     }
 }
 
-export default Main;
+export default withStyles(s)(Main);

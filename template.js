@@ -1,11 +1,12 @@
 //As stated in Redux server side rendering. Stringify's The Redux State and Parses the prerendered Component.
 
- function renderFullPage(html, preloadedState) {
+ function renderFullPage(html, preloadedState, styles) {
     return `
     <!doctype html>
     <html>
       <head>
         <title>Redux Universal Example</title>
+        <style type="text/css">${styles.join('')}</style>
       </head>
       <body>
         <div id="Root">${html}</div>
