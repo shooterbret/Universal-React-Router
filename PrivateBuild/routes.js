@@ -9647,9 +9647,6 @@ var _reactRouter = __webpack_require__(37);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//<Route path="/view/:postId" component={Single}></Route>
-
-
 // Import css
 //import css from './styles/style.styl';
 
@@ -9665,6 +9662,7 @@ var Routes = _react2.default.createElement(
     )
 );
 // import react router deps
+//<Route path="/view/:postId" component={Single}></Route>
 var _default = Routes;
 exports.default = _default;
 ;
@@ -9704,6 +9702,8 @@ var _rootreducer2 = _interopRequireDefault(_rootreducer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import the root reducer
+//import axios from 'axios';
 //import comments from './data/comments';
 //import posts from './data/posts';
 
@@ -9715,12 +9715,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // Mabye return the store on an Async Call with axios? Why use axios on server side? is this even a good practice?
 var setStore = function setStore(PreState) {
   return (0, _redux.createStore)(_rootreducer2.default, PreState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
-};
-//import axios from 'axios';
-// import the root reducer
-/**
- * Created by shooterbret on 2/13/2017.
- */
+}; /**
+    * Created by shooterbret on 2/13/2017.
+    */
 var _default = setStore;
 exports.default = _default;
 ;
@@ -9889,8 +9886,6 @@ function posts() {
     if (state == []) {
         return state;
     }
-    //return state;
-    // return state;
     switch (action.type) {
         case 'ADD_TEXT':
             return [action.t];
@@ -10058,7 +10053,6 @@ var _withStyles2 = _interopRequireDefault(_withStyles);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//import s from '../../../styles/main.scss';
 var s = __webpack_require__(87); /**
                                                * Created by shooterbret on 2/14/2017.
                                                */
@@ -10072,8 +10066,8 @@ var Main = _react2.default.createClass({
             null,
             _react2.default.createElement(
                 'h1',
-                { className: s.title },
-                'Hello Worlds'
+                { className: s.red },
+                'Hello World'
             ),
             _react2.default.createElement(
                 _reactRouter.Link,
@@ -10126,10 +10120,6 @@ var _withStyles = __webpack_require__(88);
 
 var _withStyles2 = _interopRequireDefault(_withStyles);
 
-var _main = __webpack_require__(87);
-
-var _main2 = _interopRequireDefault(_main);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -10143,9 +10133,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * Created by shooterbret on 2/14/2017.
  */
 
-//require('../../../styles/main.scss');
 
-
+var s = __webpack_require__(87);
 var image = __webpack_require__(156);
 
 var Main = function (_React$Component) {
@@ -10180,7 +10169,7 @@ var Main = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                     'h1',
-                    { className: _main2.default.green },
+                    { className: s.green },
                     'Hello World, welcome to page 2'
                 ),
                 _react2.default.createElement('img', { src: image }),
@@ -10200,7 +10189,7 @@ var Main = function (_React$Component) {
                         { onClick: function onClick() {
                                 return _this3.props.AddText('I CLICKED A BUTTON!');
                             } },
-                        ' This Button Will Set text '
+                        ' This Button Will Set text'
                     )
                 )
             );
@@ -10210,7 +10199,7 @@ var Main = function (_React$Component) {
     return Main;
 }(_react2.default.Component);
 
-var _default = (0, _withStyles2.default)(_main2.default)(Main);
+var _default = (0, _withStyles2.default)(s)(Main);
 
 exports.default = _default;
 ;
@@ -10236,13 +10225,15 @@ exports = module.exports = __webpack_require__(141)();
 
 
 // module
-exports.push([module.i, ".main_root { padding: 10px; }\r\n.main_title { color: red; }\r\n.main_green{color: #61ad35;}", ""]);
+exports.push([module.i, ".main_root { padding: 10px; }\r\n.main_title { color: red; }\r\n.main_green{color: #61ad35;}\r\n.main_purple{color:purple;}\r\n.main_red{color:red;}", ""]);
 
 // exports
 exports.locals = {
 	"root": "main_root",
 	"title": "main_title",
-	"green": "main_green"
+	"green": "main_green",
+	"purple": "main_purple",
+	"red": "main_red"
 };
 
 /***/ }),

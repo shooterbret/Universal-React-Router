@@ -6,21 +6,22 @@
  */
 import React from 'react';
 import axios from 'axios';
-//require('../../../styles/main.scss');
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from '../../../styles/main.scss';
 
-    let image =  require("./strange.jpg");
-class Main extends React.Component{
-    constructor(props){
+const s = require('../../../styles/main.scss');
+const image = require("./strange.jpg");
+
+class Main extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {text: "Loading..."}
     }
-    componentDidMount(){
+
+    componentDidMount() {
         axios.get('/text')
-            .then((response) =>{
-            console.log(response.data);
-                this.setState({text:response.data});
+            .then((response) => {
+                console.log(response.data);
+                this.setState({text: response.data});
             });
     }
 
@@ -34,7 +35,8 @@ class Main extends React.Component{
                 <div id="Redux Store Testing">
                     Hello <br/>
                     {this.props.posts} <br/>
-                    <button onClick={() => this.props.AddText('I CLICKED A BUTTON!')}> This Button Will Set text </button>
+                    <button onClick={() => this.props.AddText('I CLICKED A BUTTON!')}> This Button Will Set text
+                    </button>
                 </div>
             </div>
         )

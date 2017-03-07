@@ -2,8 +2,6 @@ function posts(state = [], action) {
     if (state == []){
         return state;
     }
-    //return state;
-   // return state;
     switch(action.type) {
         case 'ADD_TEXT' :
            return  [action.t];

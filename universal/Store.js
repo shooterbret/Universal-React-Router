@@ -3,10 +3,8 @@
  */
 import { createStore,  applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import rootReducer from './components/reducer/rootreducer';// import the root reducer
 //import axios from 'axios';
-// import the root reducer
-import rootReducer from './components/reducer/rootreducer';
-
 //import comments from './data/comments';
 //import posts from './data/posts';
 
@@ -16,6 +14,6 @@ import rootReducer from './components/reducer/rootreducer';
 // create an object for the default data
 
 // Mabye return the store on an Async Call with axios? Why use axios on server side? is this even a good practice?
-let setStore = (PreState) =>
+const setStore = (PreState) =>
 {return createStore(rootReducer, PreState, applyMiddleware(thunk))};
 export default setStore;

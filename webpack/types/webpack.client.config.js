@@ -1,12 +1,12 @@
-let merge = require('webpack-merge');
-let path = require('path');
-let baseConfig = require('../modes/webpack.development.config');
-let webpack = require('webpack');
-//let webpack = require('webpack');
+const merge = require('webpack-merge');
+const path = require('path');
+const baseConfig = require('../modes/webpack.development.config');
+const webpack = require('webpack');
+
 const PATHS = {
     app: path.join(__dirname, "./../../client/Client"),
 
-    public: path.join(__dirname,"./../../../public")
+    public: path.join(__dirname, "./../../../public")
 };
 const lconfig = {
     entry: ['react-hot-loader/patch',
@@ -17,7 +17,7 @@ const lconfig = {
     output: {
         filename: 'client.js',
         path: path.resolve(PATHS.public),
-        publicPath : "http://localhost:3000/"
+        publicPath: "http://localhost:3000/"
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development node --debug -r \"babel-register\" ./server/Server",
+    "start": "cross-env NODE_ENV=development node ./server/Server",
     "build": "webpack --devtool source-map --config ./webpack/types/webpack.client.config",
     "builds": "webpack --devtool source-map --watch --config ./webpack/types/webpack.server.config",
     "strange": "cross-env NODE_ENV=development nodemon --verbose --watch ./public ./public/server.js",
