@@ -10,7 +10,7 @@ const Main = React.createClass({
     render() {
         return (
             <div>
-                    <h1 className={s.red}>Hello World
+                    <h1 className={s.blue}>Hello World
                     </h1>
                 <Link to="/pagetwo">page</Link>
             </div>

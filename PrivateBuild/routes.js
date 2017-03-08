@@ -10066,8 +10066,8 @@ var Main = _react2.default.createClass({
             null,
             _react2.default.createElement(
                 'h1',
-                { className: s.red },
-                'Hello World'
+                { className: s.blue },
+                'Hello Worldssds'
             ),
             _react2.default.createElement(
                 _reactRouter.Link,
@@ -10225,7 +10225,7 @@ exports = module.exports = __webpack_require__(141)();
 
 
 // module
-exports.push([module.i, ".main_root { padding: 10px; }\r\n.main_title { color: red; }\r\n.main_green{color: #61ad35;}\r\n.main_purple{color:purple;}\r\n.main_red{color:red;}", ""]);
+exports.push([module.i, ".main_root { padding: 10px; }\r\n.main_title { color: red; }\r\n.main_green{color: #61ad35;}\r\n.main_purple{color:purple;}\r\n.main_red{color:red;}\r\n.main_blue{color:blue};", ""]);
 
 // exports
 exports.locals = {
@@ -10233,7 +10233,8 @@ exports.locals = {
 	"title": "main_title",
 	"green": "main_green",
 	"purple": "main_purple",
-	"red": "main_red"
+	"red": "main_red",
+	"blue": "main_blue"
 };
 
 /***/ }),
@@ -23274,6 +23275,7 @@ router.get('*', function (req, res) {
     var css = []; // CSS for all rendered React components
 
     (0, _reactRouter.match)({ routes: _ReactRouter2.default, location: req.url }, function (error, redirectLocation, renderProps) {
+        //Handle Error Messages https://github.com/ReactTraining/react-router/blob/master/docs/guides/ServerRendering.md
         //REQUEST DB
         var store = (0, _Store2.default)({ posts: "This is the Redux Default Store Talking" });
         //Makes request here. We will set this up with mock data. You can also use plain mongo here

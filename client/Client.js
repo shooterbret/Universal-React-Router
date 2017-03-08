@@ -14,10 +14,9 @@ const client = (newRoutes) => {
     (
         render(
             <AppContainer>
-
                     <Provider store={store}>
                         <WithStylesContext onInsertCss={styles => css.push(styles._insertCss())}>
-                        <Router history={browserHistory} routes={Routes}>
+                        <Router history={browserHistory} routes={newRoutes}>
                         </Router>
                         </WithStylesContext>
                     </Provider>
@@ -38,7 +37,8 @@ if (module.hot) { //Always runs when hot is enabled. Simply checks if hot is on 
 //Very broken. Watch These https://github.com/frenzzy/react-starter-kit/commit/2a4b934d23d83bdfd7fa28b191aad625eea0e249
         //https://github.com/kriasoft/isomorphic-style-loader/issues/68
         //
+
         const newRoutes = require('./../universal/ReactRouter').default;
-        client(newRoutes); // Inject the updates (reloads (or reinjects) entire page)
+       client(newRoutes); // Inject the updates (reloads (or reinjects) entire page)
     });
 }

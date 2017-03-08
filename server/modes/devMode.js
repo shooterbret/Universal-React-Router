@@ -21,14 +21,14 @@ module.exports = (app) => {
 
     app.use(webpackMiddleware(oneinstance));
     app.use(require("webpack-hot-middleware")(oneinstance, {
-                noInfo: true, reload: true
-            }));
-if (RouteFile == null) {
-    console.log("Loading Routes Module.");
-    requireModule("Routes Module Loaded");
-}else{
-    console.log("Server Is Reloading This File. Please Disable Nodemon, This breaks important middleware.")
-}
+        noInfo: true, reload: true
+    }));
+    if (RouteFile == null) {
+        console.log("Loading Routes Module.");
+        requireModule("Routes Module Loaded");
+    } else {
+        console.log("Server Is Reloading This File. Please Disable Nodemon, This breaks important middleware.")
+    }
 
     function reloadModuleCache() {
         console.log("Reloading Cache...");
