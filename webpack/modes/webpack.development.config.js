@@ -11,14 +11,15 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
-                test: /\.(jpg|png)$/,
+                test: /\.(jpg|png|mp4)$/,
                 loader: 'file-loader'
             },
             {
                 test: /\.scss$/,
                 loaders: [
                     'isomorphic-style-loader',
-                    'css-loader?modules&localIdentName=[name]_[local]'
+                    'css-loader?modules&localIdentName=[name]_[local]',
+                    'sass-loader'
                 ]
             }
         ]
