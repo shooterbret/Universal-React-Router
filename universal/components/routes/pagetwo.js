@@ -19,7 +19,8 @@ class Main extends React.Component {
 
     componentDidMount() {
         axios.get('/text')
-            .then((response) => {
+            .then((response) =>
+            {
                 console.log(response.data);
                 this.setState({text: response.data});
             });

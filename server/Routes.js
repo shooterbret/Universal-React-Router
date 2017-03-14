@@ -18,6 +18,7 @@ router.get('*', function (req, res) {
     const css = []; // CSS for all rendered React components
 
     match({routes: Routes, location: req.url}, (error, redirectLocation, renderProps) => {
+        //Handle Error Messages https://github.com/ReactTraining/react-router/blob/master/docs/guides/ServerRendering.md
         //REQUEST DB
         let store = setStore({posts: "This is the Redux Default Store Talking"});
         //Makes request here. We will set this up with mock data. You can also use plain mongo here

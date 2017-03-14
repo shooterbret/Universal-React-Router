@@ -37,7 +37,8 @@ const lconfig = {
         filename: 'routes.js',
         library: '',
         libraryTarget: "commonjs2",
-        path: PATHS.private
+        path: PATHS.private,
+        publicPath: "http://localhost:3000/"
     },
     watch: true,
     externals: nodeModules,
