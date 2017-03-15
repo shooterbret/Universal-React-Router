@@ -1,7 +1,8 @@
 import React from 'react'
 let {render} =  require('react-dom');
 import {Provider} from 'react-redux'
-import {Router, browserHistory} from 'react-router';
+//import {Router} from 'react-router';
+import { BrowserRouter } from 'react-router-dom'
 import configureStore from '../universal/Store'
 //noinspection JSUnresolvedVariable
 const preloadedState = window.__PRELOADED_STATE__;
@@ -10,15 +11,17 @@ import Routes from './../universal/ReactRouter'
 import {AppContainer} from 'react-hot-loader'
 import WithStylesContext from './../server/WithStylesContext';
 const css = [];
+console.log("________________________");
+console.log(Routes);
+// <WithStylesContext onInsertCss={styles => css.push(styles._insertCss())}>
+console.log("________________________");
 const client = (newRoutes) => {
     (
         render(
             <AppContainer>
                     <Provider store={store}>
-                        <WithStylesContext onInsertCss={styles => css.push(styles._insertCss())}>
-                        <Router history={browserHistory} routes={newRoutes}>
-                        </Router>
-                        </WithStylesContext>
+
+                        <BrowserRouter children={Routes()}/>
                     </Provider>
             </AppContainer>
             ,

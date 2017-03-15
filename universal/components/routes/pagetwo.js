@@ -6,7 +6,10 @@
  */
 import React from 'react';
 import axios from 'axios';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actionCreators from '../actionCreators';
+//import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 //const s = require('../../../styles/main.scss');
 const image = require("./strange.jpg");
@@ -44,4 +47,4 @@ class Main extends React.Component {
     }
 }
 
-export default Main;
+export default connect((state)=>{ return {posts: state.posts}},(dispatch)=>{return bindActionCreators(actionCreators, dispatch)})(Main);

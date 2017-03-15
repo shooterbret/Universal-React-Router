@@ -1,5 +1,5 @@
 //As stated in Redux server side rendering. Stringify's The Redux State and Parses the prerendered Component.
-
+//      <script async src="client.js"></script>
  function renderFullPage(html, preloadedState, styles) {
     return `
     <!doctype html>
@@ -15,7 +15,7 @@
           //"It escapes the < characeter to &lt; So it parses OK internally" BTM
           //Async Loads Bundle?
         </script>
-        <script async src="client.js"></script>
+
       </body>
     </html>
     `

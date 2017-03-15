@@ -4,18 +4,16 @@ import React from 'react';
 //import css from './styles/style.styl';
 
 // Import Components
-import App from './components/App';
-import SameApp from './components/routes/index'
-import pagetwo from './components/routes/pagetwo'
+//import App from './components/App';
+import SameApp from './components/routes/Root';
+//import pagetwo from './components/routes/pagetwo'
 // import react router deps
 //<Route path="/view/:postId" component={Single}></Route>
-import {  Route, IndexRoute } from 'react-router';
- const Routes = (
+
+import {  Route } from 'react-router';
+ const Routes = () => (
      <div>
-            <Route path="/" component={App}>
-                <IndexRoute component={SameApp}/>
-                <Route path="/pagetwo" component={pagetwo}/>
-            </Route>
+            <Route path="/" component={SameApp}/>
      </div>
 );
 export default Routes;
