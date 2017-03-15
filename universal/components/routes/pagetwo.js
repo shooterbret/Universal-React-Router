@@ -9,9 +9,9 @@ import axios from 'axios';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actionCreators';
-//import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
-//const s = require('../../../styles/main.scss');
+const s = require('../../../styles/main.scss');
 const image = require("./strange.jpg");
 
 class Main extends React.Component {
@@ -32,7 +32,7 @@ class Main extends React.Component {
     render() {
         return (
             <div>
-                <h1>Hello World, welcome to page 2</h1>
+                <h1 className={s.green}>Hello World, welcome to page 2</h1>
                 <img src={image}/>
                 ||{this.state.text}||
 
@@ -47,4 +47,4 @@ class Main extends React.Component {
     }
 }
 
-export default connect((state)=>{ return {posts: state.posts}},(dispatch)=>{return bindActionCreators(actionCreators, dispatch)})(Main);
+export default connect((state)=>{ return {posts: state.posts}},(dispatch)=>{return bindActionCreators(actionCreators, dispatch)})(withStyles(s)(Main));

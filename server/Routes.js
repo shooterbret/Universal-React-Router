@@ -10,7 +10,7 @@ import { StaticRouter, Route} from 'react-router';
 import {Provider} from 'react-redux';
 import React from 'react'
 let {renderToString} = require('react-dom/server');
-//import WithStylesContext from './WithStylesContext';
+import WithStylesContext from './WithStylesContext';
 
 router.get('/text', function (req, res) {
     res.send("This is a client side request using axios.")
@@ -31,13 +31,13 @@ router.get('*', function (req, res) {
              // https://github.com/ReactTraining/react-router/blob/master/docs/guides/ServerRendering.md explains Match
              */
             //PRERENDER HISTORY IS PISSING. CORRECT WHEN POSSIBLE https://github.com/kriasoft/isomorphic-style-loader/issues/15 USES HISTORY ON BOTH
-          //  <WithStylesContext onInsertCss={styles => css.push(styles._getCss())}>
+            <WithStylesContext onInsertCss={styles => css.push(styles._getCss())}>
                 <Provider store={store}>
                     <StaticRouter location={req.url} context={context} >
                         <Routes/>
                     </StaticRouter>
                 </Provider>
-           // </WithStylesContext>
+            </WithStylesContext>
         );
         let finalState = store.getState();
         let debuggo = renderFullPage(initialRender, finalState, css);

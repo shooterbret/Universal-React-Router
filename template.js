@@ -15,7 +15,7 @@
           //"It escapes the < characeter to &lt; So it parses OK internally" BTM
           //Async Loads Bundle?
         </script>
-
+<script async src="client.js"></script>
       </body>
     </html>
     `

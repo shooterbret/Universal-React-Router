@@ -18,12 +18,13 @@ console.log("________________________");
 const client = (newRoutes) => {
     (
         render(
+            <WithStylesContext onInsertCss={styles => css.push(styles._insertCss())}>
             <AppContainer>
                     <Provider store={store}>
-
                         <BrowserRouter children={Routes()}/>
                     </Provider>
             </AppContainer>
+            </WithStylesContext>
             ,
             document.getElementById('Root'))
 
