@@ -31,7 +31,7 @@ module.exports = (app) => {
     }
 
     function reloadModuleCache() {
-        console.log("Reloading Cache...");
+        //console.log("Reloading Cache...");
         let name = require.resolve(routeBuildDirectory);
         delete require.cache[name];
         requireModule("Server Has Reloaded Routes Module");
@@ -44,7 +44,11 @@ module.exports = (app) => {
             addRoutes()
         }
         catch (e) {
-            console.log("The Server Has Crashed In Require Phase. Will now attempt to restart In: " + timeOut + " Seconds...");
+            console.log("-------ERROR-------");
+            console.log(e);
+            console.log("-------------------");
+            // add Watcher here to check for file changes and then refresh. Would be much more effecient and would mean console log spam.
+           // console.log("The Server Has Crashed In Require Phase. Will now attempt to restart In: " + timeOut + " Seconds...");
             setTimeout(() => {
                 reloadModuleCache()
             }, timeOut * 1000)
@@ -58,7 +62,9 @@ module.exports = (app) => {
                 RouteFile(req, res, next);
             });
         } catch (err) {
+            console.log("-------ERROR-------");
             console.log(err);
+            console.log("-------------------");
             console.log("The Server Has Crashed In Middleware Phase. Will now attempt to restart In: " + timeOut + " Seconds...");
             setTimeout(() => {
                 reloadModuleCache()

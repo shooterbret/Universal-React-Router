@@ -8,7 +8,7 @@ import React from 'react';
 import axios from 'axios';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
-const s = require('../../../styles/main.scss');
+//const s = require('../../../styles/main.scss');
 const image = require("./strange.jpg");
 
 class Main extends React.Component {
@@ -29,7 +29,7 @@ class Main extends React.Component {
     render() {
         return (
             <div>
-                <h1 className={s.green}>Hello World, welcome to page 2</h1>
+                <h1>Hello World, welcome to page 2</h1>
                 <img src={image}/>
                 ||{this.state.text}||
 
@@ -44,4 +44,4 @@ class Main extends React.Component {
     }
 }
 
-export default withStyles(s)(Main);
+export default Main;
